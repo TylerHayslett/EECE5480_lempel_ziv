@@ -1,0 +1,645 @@
+Technology Review
+
+Draft Copy
+
+ REPORT OUTLINE
+1.0 MULTIPLE ACCESS TECHNIQUES FOR WIRELESS COMMUNICATIONS	
+1.1 FREQUENCY DIVISION MULTIPLE ACCESS (FDMA)	
+1.2 TIME DIVISION MULTIPLE ACCESS (TDMA)	
+1.3 CODE DIVISION MULTIPLE ACCESS (CDMA)	
+2.0 WIRELESS SYSTEMS STANDARDS	
+2.1 AMPS AND ETACS	
+2.1.1 AMPS AND ETACS SYSTEM OVERVIEW	
+2.1.2 CALL HANDLING IN AMPS AND ETACS	
+2.2 N-AMPS	
+2.3 UNITED STATES DIGITAL CELLULAR (IS-54 TDMA)	
+2.3.1 USDC RADIO INTERFACE	
+2.3.2 SPEECH CODING	
+2.3.3 MODULATION	
+2.4 GLOBAL SYSTEM FOR MOBILE (GSM) COMUNICATIONS	
+2.4.1 GSM SERVICES AND FEATURES	
+2.4.2 GSM SYSTEM ARCHITECTURE	
+2.4.3 GSM RADIO SUBSYSTEM	
+2.4.4 GSM CHANNEL TYPES	
+2.4.5 SPEECH CODING	
+2.4.6 FREQUENCY HOPPING	
+2.5 CDMA DIGITAL CELLULAR STANDARD (IS-95)	
+2.5.1 FREQUENCY AND CHANNEL SPECIFICATIONS	
+2.5.2 THE FORWARD CDMA CHANNEL	
+2.5.3 Reverse CDMA Channel	
+2.6 CT2 STANDARD FOR CORDLESS TELEPHONES	
+2.6.1 THE CT2STANDARD	
+2.6.2 MODULATION	
+2.6.3 SPEECH CODING	
+2.6.4 DUPLEXING	
+2.7 DIGITAL EUROPEAN CORDLESS TELEPHONE (DECT)	
+2.7.1 FEATURES AND CHARACTERISTICS	
+2.7.2 DECT ARCHITECTURE	
+2.7.3 PHYSICAL LAYER	
+2.7.4 THE NETWORK LAYER	
+2.7.5 DECT RADIO LINK	
+2.7.6 CHANNEL TYPES	
+2.7.7 SPEECH CODING	
+2.8 PACS - PERSONAL ACCESS COMMUNICATION SYSTEMS	
+2.8.1 PACS SYSTEM ARCHITECTURE	
+2.8.2 PACS RADIO INTERFACE	
+2.9 APPLICABLE PCS STANDARDS	
+2.9.1 TDMA-1900 (IS-136)	
+2.9.2 CDMA-1900	
+2.9.3 GSM-1900	
+3.0 QUALITY AND CAPACITY CONSIDERATIONS	
+3.1 TDMA-1900	
+3.1.1 Quality	
+3.1.2 Capacity	
+3.2 CDMA-1900	
+3.2.1 Quality	
+3.2.2 Capacity	
+3.3 GSM-1900	
+3.3.1 Quality	
+3.3.2 Capacity	
+4.0 INDUSTRY COMMITMENT AND DEPLOYMENT ISSUES	
+4.1 TDMA-1900	
+4.2 CDMA	
+4.3 GSM	
+4.4 SUMMARY OF PCS TECHNOLOGY CHOICE BY THE PROVIDERS	
+5.0 HAYS BTA MARKET ANALYSIS	
+5.1 BTA STATISTICS	
+5.2 BTA COMPETITIVE LANDSCAPE	
+5.2.1 MTA Competitors	
+5.2.2 BTA Analysis	
+6.0 BASE STATION DESIGN ASSUMPTIONS	
+
+
+1.0	Multiple Access Techniques For Wireless Communications
+This Section provides an overview of different multiple access technology schemes used in the wireless industries.  Different wireless standards use different multiple access schemes.  At the same time, different standards ( e.g., GSM and USDC) could be built on the same multiple access concept.
+1.1	FREQUENCY DIVISION MULTIPLE ACCESS (FDMA)
+Frequency Division Multiple Access (FMDA) assigns individual channels to individual users.  Figure 1 shows that each user is allocated a unique frequency band or channel.. These channels are assigned on demand to users who request service. 
+
+Figure 1 - Distribution of Spectrum Resources in FDMA
+During the period of the call, no other user can share the same frequency band.  In FDD systems, the users are assigned a channel as a pair of frequencies; one frequency is used for forward channel, while the other frequency is used for the reverse channel.
+The features of FDMA are:
+* The FDMA channel carries only one phone circuit at a time.
+* If an FDMA channel is not in use, it sits idle and cannot be used by other users to increase or share capacity.  It is essentially a wasted resource.
+* After the assignment of a voice channel, the base station and mobile transmit simultaneously and continuously.
+* The bandwidths of FDMA channels are relatively narrow ( approx. = 30kHz) as each channel supports only one circuit per carrier.  That is, FDMA is usually implemented in narrowband systems.
+* The symbol time is large compared to the average delay spread.  This implies that the amount of intersymbol interference is low and, thus, little or no equalization is required in FMDA narrowband systems
+* The complexity of FDMA mobile systems is lower when compared to TDMA systems, though this is changing as digital signal processing methods improve for TDMA.
+* Since FDMA is a continuous transmission scheme, fewer bits are needed for overhead purposes (such as synchronization and framing bits) compared to TDMA.
+* FDMA systems have higher cell site system costs compared to TDMA systems.  This is due to the single channel per carrier design and the need to use costly bandpass filters to eliminate spurious radiation at the base station.
+* The FDMA mobile unit uses duplexers, since both the transmitter and receiver operate at the same time.  This results in an increase in the cost of FDMA subscriber units and base stations.  
+* FDMA required tight RF filtering to minimize adjacent channel interference.
+1.2	TIME DIVISION MULTIPLE ACCESS (TDMA)
+Time Division Multiple Access (TDMA) systems divide the radio spectrum into time slots, and in each slot only one user is allowed to either transmit or receive.  Figure 2 shows that each user occupies a cyclically repeating time slot, so a channel may be thought of as a particular time slop that reoccurs every frame, where N time slots comprise a frame.
+
+
+Figure 2 - Distribution of Spectrum Resources in TDMA
+TDMA systems transmit data in a buffer-and-burst method; thus the transmission for any user is non-continuous.  This implies that, unlike FDMA systems which accommodate analog FM, digital data and digital modulation must be used with TDMA.  The transmissions from various users are interlaced into a repeating frame structure.
+A frame consists of a number of slots.  Each frame is made up of a preamble, information message, and trail bits.  In a TDMA/TDD system, half of the slots in the frame information message are used for the forward link channels and half would be used for reverse link channels.  In TDMA/FDD systems, an identical or similar frame structure is used solely either forward or reverse transmission, but the carrier frequencies are different for the forward and reverse links.  In general, TDMA/FDD systems intentionally induce several time slots of delay between the forward and reverse time slots of a particular user, so that duplexers are not required in the subscriber unit.  
+In a TDMA frame, the preamble contains the address and synchronization information that both the base station and the subscribers use to identify each other.  Guard times allow synchronization of the receivers between different slots and frames.  Different TDMA wireless standards have different TDMA frame structures.
+The features of TDMA are:
+* TDMA shares a single carrier frequency with several users, where each user makes use of non-overlapping time slots.  The number of time slots per frame depends on several factors, such as modulation technique, available bandwidth, etc.
+* Data transmissions for users of a TDMA system is not continuous, but occurs in bursts,  This results in low battery consumption, since the subscriber transmitter can be turned off when not in use (which is most of the time).
+* Because of discontinuous transmissions in TDMA, the handoff process is much simpler for a subscriber unit, since it is able to listen for other base stations during idle time slot.  An enhanced link control, such as that provided by mobile assisted handoff (MAHO) can be carried out by a subscriber by listening on an idle slot in the TDMA frame. 
+* TDMA uses different time slots for transmission and reception, and thus duplexers are not required.  Even if FDD is used, a switch rather than a duplexer inside the subscriber unit is all that is required to switch between transmitter and receiver using TDMA.
+* Adaptive equalization is usually necessary in TDMA systems, since the transmission rates are generally very high compared to FDMA channels.
+* In TDMA, the guard time should be minimized.  But if the transmitted signal at the edges of a time slot are suppressed sharply in order to shorten the guard time, the transmitted spectrum will expand and cause interference to adjacent channels. 
+* High synchronization overhead is required in TDMA systems because of burst transmissions.  TDMA transmissions are slotted, and this requires the receivers to be synchronized for each data burst.  In addition, guard slots are necessary to separate users and this results in the TDMA systems having larger overheads compared to FDMA.
+* TDMA has an advantage in that it is possible to allocate different numbers of time slots per frame to different users. Thus bandwidth can be supplied on demand to different users by concatenating or reassigning time slots based on priority.
+1.3	CODE DIVISION MULTIPLE ACCESS (CDMA)
+In Code Division Multiple Access (CDMA) systems, the narrowband message signal is multiplied by a very large bandwidth signal called the spreading signal.  The spreading signal is a pseudo noise code sequence that has a chip rate which is orders of magnitudes greater than the data rate of the message.
+
+
+Figure 3 - Distribution of Spectrum Resources in CDMA
+All users in a CDMA system, as seen from Figure 4, use the same carrier frequency and may transmit simultaneously.  Each user has its own pseudo-random codeword which is approximately orthogonal to all other codewords.  The receiver performs a time correlation operation to detect only the specific desired codeword.  All other codewords appear as noise due to decorrelation.  For detection of the message signal, the receiver needs to know the codeword used by the transmitter.  Each user operates independently with no knowledge of the other�s frequency or time slot.
+In CDMA, the power of multiple users at a receiver determines the noise floor after decorrelation.  If the power of each user within a cell is not controlled so that they do not appear equal at the base station receiver, then the near-far problem occurs.   The near-far problem occurs when nearby subscriber transmitters overpower the base station receiver and drown out the received signal of far away subscribers. 
+The feature of CDMA are:
+* Many users of a CDMA system share the same frequency.  Either TDD or FDD may be used.
+* Unlike TDMA or FDMA, CDMA has a soft capacity limit. Increasing the number of users in a CDMA system raise the noise floor in a linear manner.  Thus, there is no absolute limit on the number of users in CDMA.  Rather, the system performance gradually degrades for all users as the number of users is increased, and improves as the number of users is decreased.
+* If the spreading of the CDMA signal is much greater than the coherence bandwidth of the channel, multipath fading is substantially reduced because the signal provides frequency diversity.
+* 
+* Channel transmission rates are very high typical CDMA systems.  Consequently, the symbol (chip) duration is very short and usually much less than the channel delay spread.  Therefore, equalization is not required in CDMA systems. 
+* Since CDMA uses co-channel cells, it can use macroscopic spatial diversity to provide soft handoff.  Soft handoff is performed by the MSC, which can simultaneously monitor a particular user from two or more base stations.  The MSC may choose the best version of the signal at any time without switching frequencies.
+* The near-far problem occurs at a CDMA receiver if a non-desired user has a high detected power as compared to the desired user.  When a base station receiver attempts to receive a particular mobile, interferers (such as out-of-cell mobiles not under power control) may capture the receiver.
+CAPACITY OF DIGITAL CELLULAR TDMA
+
+In practice, TDMA systems improve capacity by factor of 5-10 times as compared to analog cellular radio systems.  Powerful error control and speech coding enable better link performance in high interference environments.  By exploiting speech activity, some TDMA systems are able to better utilize each radio channel.  Mobile assisted handoff (MAHO) allows subscribers to monitor the neighboring base stations, and the best base station choice may be made by each subscriber.  MAHO allows the deployment of densely packed microcells, thus giving substantial capacity gains in a system.  TDMA also makes it possible to introduce adaptive channel allocation (ACA).  ACA eliminates system planning since it is not required to plan frequencies for cells.  Various proposed standards such as the GSM, U.S. digital cellular (USDC), and Japan digital cellular (JDC) have adopted digital TDMA for high capacity.  Table 1 compares analog FM based AMPS to other digital TDMA based cellular systems.
+
+Table 1 Comparison of analog FM with digital TDMA based cellular systems 
+
+PARAMETER 
+ANALOG FM
+GSM
+USDC
+PDC
+Bandwidth (MHz)
+25
+25
+25
+25
+Voice Channels
+833
+1000
+2500
+3000
+Reuse Plan
+7
+4, 3
+7, 4
+7, 4
+Channels/sits
+119
+250,333
+357,625
+429, 750
+Traffic (Erlang/sq km)
+11.9
+27.7, 40
+41, 74.8
+50, 90.8
+Capacity Gain
+1.0
+2.3, 3.4
+3.5, 6.3
+4.2, 7.6
+2.0	Wireless Systems Standards
+This section provides an overview of available commercial analog and digital standards in the wireless industry worldwide.  Some of these standards (i.e., CDMA IS-95, TDMA IS-54, GSM) have been implemented both in cellular and PCS frequencies ( ETACS and GSM in European cellular only).  
+2.1	AMPS AND ETACS
+The AMPS system uses a seven cell reuse pattern with provisions for sectoring and cell splitting to increase capacity when needed.  After extensive subjective tests, it was found that the AMPS 30 kHz channel requires a signal to interference ratio (SIR) of 18 dB for satisfactory performance.  The smallest reuse factor which uses the 120 degree directional antennas requirement is N=7, and hence a seven cell reuse pattern has been adopted.
+AMPS is used throughout the world, and is particularly popular in the U.S., South America, Australia, and China.  While the U.S. system has been designed for a duopoly market (e.g. two competing carriers per market), many countries have just a single provider.  Thus, while U.S. AMPS restricts the A and B side carriers to a subset of 416 channels each, other implementations of AMPS differ from country to country.  Nevertheless, the air interface standard remains identical throughout the world. 
+The European Total Access Communication System (ETACS) was developed in the mid 1980s and is virtually identical to AMPS, except it is scaled to fit in 25 kHz (as opposed to 30 kHz) channels used throughout Europe.  Also, the telephone number of each subscriber (called the Mobile Identification Number or MIN) is formatted, due to the need to accommodate different codes throughout Europe and area codes in the U.S.
+2.1.1	AMPS AND ETACS SYSTEM OVERVIEW
+Like all other first generation analog cellular systems, AMPS and ETACS use Frequency Modulation (FM) for radio transmission.  In the United States, transmissions from mobiles to basestations (reverse link) use frequencies between 824 and 849 MHz, while base stations that transmit to mobiles (forward link) use frequencies between 869 and 894 MHz.  ETACS uses 890-915 MHz for the reverse link and 935-960 MHz for the forward link.  
+Every radio channel actually consists of a pair of simplex channels separated by 45 MHz.  A separation of 45 MHz between the forward and reverse channels makes use of inexpensive  but highly selective duplexers in the subscriber units.  For AMPS, the maximum deviation of the FM modulator is =/- 12 kHz (=/- 10kHz for ETACS).  The control channel transmissions and blank-and-burst data streams are transmitted at 10 kbps for AMPS and at 8 kbps for ETACS.  These wideband data streams have a maximum frequency deviation of +/- 8 kHz and +/- 6.4 kHz for AMPS and ETACS.
+AMPS and ETACS cellular radio systems generally have tall towers which supports several receiving antennas and transmitting antennas which typically radiate a few hundred watts of effective power.  Each base station has one control channel transmitter (that broadcasts on the forward control channel), one control channel received (that listens on the reverse control channel for any cellular phone switching to set-up a call), and eight or more FM duplex voice channels.  Commercial basestations support as many as 57 voice channels.  Forward voice channels (FVC) carry the portion of the telephone conversation originating from the landline telephone network caller and going to the cellular subscriber.  Reverse voice channels (RVC) carry the portion of the telephone conversation originating from the cellular subscriber and going to the landline telephone network caller.  The actual number of control and voice channels used at a particular base station varies widely in base stations.   The number of base stations in a service area varies widely from as few as one cellular tower in a rural area to several hundred or more base stations in a large city.  
+In the U.S. AMPS system, there are 21 control channels for each of the two service providers in each market, and these are standardized throughout the country.  ETACS supports 42 control channels for a single provider.  Thus any cellular telephone in the system scans a limited number of control channels to find the best serving base station.  It is up to the service provider to ensure that neighboring base stations within a system are assigned forward control channels that do not cause adjacent channel interference and which monitor different control channels in nearby base stations
+2.1.2	CALL HANDLING IN AMPS AND ETACS
+Several factors may contribute to degraded cellular service or dropped or blocked calls.  Factors such as the performance of the MSC. The current traffic demand in a geographic area, the specific channel reuse plan, the number of base stations relative to the subscriber population density, the specific propagation conditions between users of the system, and the signal threshold settings for handoffs play major roles in system performance.  Maintaining perfect service and call quality in a heavily populated cellular system is practically impossible due to the tremendous system complexity and lack of control in determining radio coverage and customer usage patterns.  System operators strive to forecast system growth and do their best to provide suitable coverage and sufficient capacity to avoid co-channel interference within a market, but inevitably some calls will be dropped or blocked.
+Table 2  AMPS and ETACS Radio Interface Specifications
+PARAMETER
+AMPS SPECIFICATION
+ETACS SPECIFICATION
+Multiple Access
+FDMA
+FDMA
+Duplexing
+FDD
+FDD
+Channel Bandwidth
+30 kHz
+25 kHz
+Traffic Channel per RF Channel
+1
+1
+Reverse Channel Frequency
+824 - 849  MHz
+890 - 915 MHz
+Forward Channel Frequency
+869 - 894 MHz
+935 -960 MHz
+Voice Modulation
+FM
+FM
+Peak Deviation: Voice Channels Control/Wideband data
++/- 12  kHz
++/- 8 kHz
++/- 10 kHz
++/- 6.4 kHz
+Channel Coding for data transmission
+BCH (40, 28) on FC
+BCH (48, 36) on RC
+BCH (40, 28) on FC
+BCH (48, 36) on RC
+Data Rate on Control/Wideband channel
+10 kbps
+8 kbps
+Spectral Efficiency
+0.33 bps/Hz
+0.33 bps/Hz
+Number of Channels
+832
+1000
+2.2	N-AMPS
+To increase capacity in large AMPS markets, Motorola developed an AMPS-like system called N-AMPS (narrowband AMPS).  N-AMPS provides three users in a 30 kHz AMPS channel by using FDMA and 10 kHz channel, and provides three times the capacity of AMPS.  By replacing AMPS channels with three N-AMPS channels at one time, service providers are able to provide more trunked radio channels (and thus a much better GOS) at base stations in heavily populated areas.  N-AMPS uses the SAT and ST signaling and blank-and-burst functions in exactly the same manner as AMPS, except the signaling is done by using sub-audible data streams.  Since 10 kHz channels are used, the FM-deviation is decreased.  This in turn reduces the S/(N+1).  To counter-act this, voice companding is used, which provides a �synthetic� voice channel quieting.
+N-AMPS specifies a 300 Hz high pass audio filter for each voice channel so that supervisory and signaling data may be sent without blanking the voice.  The SAT and ST signaling uses a continuous 200 bps NRZ data stream that is FSK modulated.  SAT and ST are called DSAT and DST in N-AMPS because they are sent digitally and repetitiously in small, predefined code blocks.  There are seven different 24 bit DSAT codewords which may be selected by MSC, and the DSAT codeword is repeated by both the base station and mobile during a call.  The DST signal is simply the binary inverse of DSAT.  The seven possible DSATs and DSTs are specially designed to provide a sufficient number of alternating 0�s and 1�s so that D.C. blocking may be conveniently implemented by receivers.
+The voice channel signaling is done with 100 bps Manchester encoded FSK data, and is sent in place of DSAT when traffic must be passed on the voice channel.  As with AMPS wideband signaling, there are many messages that may be passed between the base station and subscriber unit.  These are transmitted in N-Amps using the same BCH codes as in AMPS with a predefined format of 40 bit blocks on the FVC and 48 bit blocks on the RVC.
+2.3	UNITED STATES DIGITAL CELLULAR (IS-54 TDMA)
+The first generation analog AMPS system was not designed to support the current demand in large cities.  Cellular systems which use digital modulation techniques (called digital cellular) offer large improvements in capacity and system performance.   After extensive research and comparison by major cellular manufacturers in the late 1980s, the United States Digital Cellular System (USDC) was developed to support more users in a fixed spectrum allocation.  USDC is a time division multiple access (TDMA) system which supports three full rate users and six half rate users on each AMPS channel.  Thus, USDC offers as much as six times the capacity of AMPS.  The USDC standard uses the same 45 MHz FDD scheme as AMPS.  The dual mode USDC/AMPS system was standardized as Interim Standard 54 (IS-54) by Electronic Industries Association and Telecommunication Industry Association (EIA/TIA) in 1990.
+The USDC system was designed to share the same frequencies, frequency reuse plan, and base stations as AMPS, so that base stations and subscriber units could be equipped with both AMPS and USDC, within the same piece of equipment.  By supporting both AMPS and USDC, cellular carriers are able to provide new customers with USDC base stations, channel by channel, over time.  Because USDC maintains compatibility with AMPS in a number of ways, USDC is also known as Digital AMPS (D-AMPS).
+Currently, in rural areas where immature analog cellar systems are in use, only 666 of the 832 AMPS channels are activated (that is, some rural cellar operators are not yet using the extended spectrum allocated to them in 1989).  In these markets, USDC channels may be installed in the extended spectrum to support USDC phones which roam into the system from metropolitan markets.  In urban markets where every cellular channel is already in use, selected frequency banks in high traffic base stations are converted to the USDC digital standard.  In larger cities, this gradual changeover results in a temporary increase in interference and dropped calls on the analog AMPS system, since each time a base station is changed over to digital, the number of analog channels in a geographic area is decreased.  Thus, the changeover rate from analog to digital must carefully match the subscriber equipment transition in the market.   
+The smooth transition form analog to digital in the same radio band was key driver in the development of the USDC standard.  In practice, only cities with capacity shortages (such as New York and Los Angeles) have aggressively switched from AMPS to USDC, while smaller cities are waiting until more subscribers are equipped with USDC phone.  The introduction of N-AMPS and a competing digital spread spectrum standard (IS-95, described later in this lesson) has delayed the widespread deployment of USDC throughout the U.S.
+To maintain compatibility with AMPS phones, USDC forward and reverse control channels use exactly the same signaling techniques as AMPS.  Thus, while USDC voice channels use 4-ary  /4 DQPSK modulation with a channel rate of 48.6 kbps, the forward and reverse control channels are no different than AMPS and use the same 10 kbps FSK signaling scheme and the same standardized control channels.  A recent standard, IS-136 (formerly IS-54 rev. C) also includes  /4 DQPSK modulation for the USDC control channels.  IS-54 Rev C was introduced to provide 4-ary keying instead of FSK on dedicated USDC control channels in order to increase control channel data rate, and to provide specialized services such as paging and short messaging between private subscriber user groups.
+2.3.1	USDC RADIO INTERFACE
+The USDC control channels are identical to the analog AMPS control channels.  In addition to the 42 primary AMPS control channels, USDC specifies 42 additional control channels called the secondary control channels. Thus, USDC has twice as many control channels as AMPS, so that double the amount of control channel traffic can be paged throughout a market.  The secondary control channels conveniently allow carriers to dedicate them for USDC-only use, since AMPS phones do not monitor or decode the secondary control channels.  When converting an AMPS system to USDC/AMPS, a carrier may decide to program the MSC to send pages for USDC mobiles over the secondary control channels only, while having existing AMPS traffic sent only on the AMPS control channels.  For such a system, USDC subscriber units would be programmed to automatically monitor only the secondary forward control channels when operating in the USDC mode.  Over time, as USDC user begin to populate the system to the point that additional control channels are required, USDC pages would eventually be sent simultaneously over both the primary and secondary control channels. 
+A USDC voice channel occupies 30 kHz of bandwidth in each of the forward and reverse links, and supports a minimum of three users (as compared to a single AMPS user).  Each voice channel supports a TDMA scheme that provides 6 time slots.  For full rate speech, 3 users can utilize the 6 time slots in an equally spaced fashion.  For example, user 1 occupies time slots 1 and 4, user 2 occupies time slots 2 and 5, and user 3 occupies time slots 3 and 6.  For half-rate speech, each user occupies one time slot per frame.
+2.3.2	SPEECH CODING
+The USDC speech coder is called the Vector Sum Excited Linear Predictive coders (VSELP).  This belongs to the class of Code Excited Linear Predictive coders (CELP) or Stochastically Excited Linear Predictive coders (SELP).  These coders are based upon codebooks which determine how to quantize the residual excitation signal.  The VSELP algorithm uses a code book that has pre-defined structure so that the number of computations required for the codebook search process is significantly reduced.  The VSELP algorithm was developed by a consortium of coder companies and the MOTOROLA implementation was chosen for the IS-54 standard.  The VSELP coder has an output bit rate of 7950 bps and produces a speech frame every 20 ms.  In one second, 50 speech frames, each containing 159 bits of speech are produced by the coder for a particular user.
+2.3.3	MODULATION
+To be compatible with AMPS, USDC uses 30-kHz channels.  On control (paging) channels, USDC and AMPS use identical 10 kbps binary FSK with Manchester coding.  On voice channels, the FM modulation is replaced with digital modulation having a gross bit rate of 48.6 kbps.  In order to achieve this bit rate in a 30 kHz channel, the modulation requires a spectral efficiency of 1.62 bps/Hz.  Also, to limit adjacent channel interference (ACI), spectral shaping on the digital channel must be used.
+The spectral efficiency requirements are satisfied by conventional pulse-shaped four-phase modulation schemes such as QPSK and OQPSK.  However, symmetric differential phase shift keying, commonly known as -DQPSK, has several advantages when used in a mobile radio environment and is the modulation used for USDC.  The channel symbol rate is 24.3 ksps, and the symbol duration is 41.1523  s.
+Pulse-shaping is used to reduce the transmission bandwidth while limiting the inter-symbol interference (ISI).  At the transmitter, the signal is filtered using a square-root raised cosine filter with a roll-off factor equal to 0.35.  The receiver may also employ a corresponding square-root modulation technique, requiring linear amplification to preserve the pulse shape.  Non-linear amplification results in destruction of pulse shape and expansion of the signal bandwidth.  The use of pulse-shaping with -DQPSK supports the transmission of three (and eventually six) speech signals in a 30-kHz channel bandwidth with adjacent-channel protection of 50 dB.    
+Table 3  USDC Radio Interface Specifications Summary
+PARAMETER
+USDC IS-54 SPECIFICATION
+Multiple Access
+TDMA/FDD
+Modulation
+ /4 DQPSK
+Channel Bandwidth
+30 kHz
+Reverse Channel Frequency Band
+824 - 849 MHz
+Forward Channel Frequency Band
+869 - 894 MHz
+Spectrum Efficiency
+1.62 bps/Hz
+Equalizer
+Unspecified
+Channel Coding
+7 bit CRC and rate convolution coding of constraint length 6
+Interleaving
+2 slot interleaver
+Forward Channel Antenna Diversity
+Spatial diversity
+Reverse Channel Antenna Diversity
+Switched diversity
+Users per channel
+3 (full rate speech coder of 7.95 kbps/user)
+6 (with half rate speech coder of 3.975 kbps/user)
+2.4	GLOBAL SYSTEM FOR MOBILE (GSM) COMUNICATIONS
+Global System for Mobile (GSM) Communications is a second-generation cellular system standard developed to solve the fragmentation problems of the first cellular systems in Europe.  GSM is the world�s first cellular system to specify digital modulation and network level architectures and services.  Before GSM, European countries used different cellular standards throughout the continent, and it was not possible for a customer to use a single subscriber unit throughout Europe.  GSM was originally developed to serve as the pan-European cellar service and promised a wide range of network services through the use of ISDN.  GSM�s success has exceeded the expectations of virtually everyone, and is now the word�s most popular standard for new cellular radio and personal communications equipment throughout the world.  It is predicted that by the year 2000, there will be between 20 and 50 million GSM subscribers worldwide.
+The task of specifying a common mobile communication system for Europe in the 900 MHz band was taken up by the GSM (Groupe speocial mobile) committee which was a working group of the Confereonce of Europeoene Postes des et Teoleocommunication (CEPT).  Recently, GSM has changed its name to the Global System for Mobile Communications for marketing reasons.  The setting of standards for GSM is currently under the aegis of the European Technical Standards Institute (ETSI).
+GSM was first introduced into the European market in 1991. By the end of 1993, several non-European countries in South America, Asia and Australia had adopted GSM and the technically equivalent offshoot, DCS 1800, which supports Personal Communication Services (PCS) in the 1.8- 2.0 GHz radio bands recently created by governments throughout the world.
+2.4.1	GSM SERVICES AND FEATURES
+GSM services are compatible with ISDN specification of ITU-T and are classified as either teleservices or data services.  Teleservices include standard mobile telephony and mobile-originated or base-originated traffic.  Data services include computer-to-computer communication and packet switched traffic.  User services may be divided into three major categories:
+* Telephone services, including emergency calling and facsimile.  GSM also supports Videotex and Teletex, though they are not integral parts of the GSM standard.
+* Bearer services or data services which are limited to layers 1, 2, and 3 of the open system interconnection (OSI) reference model.  Supported services include packet-switched protocols and data rates from 300 bps to 9.6 kbps.  Data may be transmitted using either a transparent mode (where GSM provides standard channel coding for the user data) or non-transparent mode (where GSM offers special coding efficiencies based on the particular data interface).
+* Supplementary ISDN services, including call diversion, closed user groups, and caller identification.  ISDN services, by being digital in nature, are not available in analog mobile networks.  Supplementary services also include the Short Messaging Service (SMS) which allows GSM subscribers and base stations to transmit alphanumeric pages of limited length (I 60 7-bit ASCII characters) while simultaneously carrying normal voice traffic.  SMS also provides cell broadcast, which allows GSM base stations to repetitively transmit ASCII messages with as many as fifteen 93-character strings in concatenated fashion.  SMS may be used for safety and advisory applications, such as the broadcast of highway or weather information to all GSM subscribers within reception range.
+From the user's point of view, one of the most remarkable features of GSM is the Subscriber Identity Module (SIM), a memory device that stores information such as the subscriber's identification number, the networks and countries where the subscriber is entitled to service, privacy keys, and other user-specific information.  A subscriber uses the SIM with a 4-digit personal ID number to activate service from any GSM phone.  SIMs are available as smart cards (credit card-sized cards that may be inserted into any GSM phone) or plug-in modules, which are less convenient than the SIM cards but are nonetheless removable and portable.  Without a SIM installed, all GSM mobiles are identical and non-operational.  It is the SIM that gives GSM subscriber units their identity.  Subscribers may plug their SIM into any suitable terminal - such as a hotel phone, public phone, or any portable or mobile phone - and are then able to have all incoming GSM calls routed to that terminal and have all outgoing calls billed to their home phone, no matter where they are in the world.
+A second remarkable feature of GSM is the on-the-air privacy which is provided by the system.  Unlike analog FM cellular phone systems which can be readily monitored, it is virtually impossible to eavesdrop on a GSM radio transmission.  The privacy is made possible by encrypting the digital bit stream sent by a GSM transmitter, according to a specific secret cryptographic key that is known only to the cellular carrier.  This key changes with time for each user.  Every- carrier and GSM equipment manufacturer must sign the Memorandum of Understanding (MOU) before developing GSM equipment or deploying a GSM system.  The MOU is an international agreement which allows the sharing of cryptographic algorithms and other proprietary information between countries and carriers.
+2.4.2	GSM SYSTEM ARCHITECTURE
+The GSM system architecture consists of three major interconnected sub-systems that interact between themselves and with the users through certain network interfaces.  The subsystems are the Base Station Sub-system (BSS), Network and Switching Sub-system (NSS), and the Operation Support Sub-system (OSS).  The Mobile Station (MS) is also a sub-system, but is usually considered part of the BSS for architecture purposes.  Equipment and services are designed within GSM to support one or more of these specific subsystems.
+The BSS, also known as the radio subsystem, provides and manages radio transmission paths between the mobile stations and the Mobile Switching Center (MSC).  The BSS also manages the radio interface between the mobile stations and all other subsystems of GSM.  Each BSS consists of many Base Station Controllers (BSCS) which connect the MS to the NSS via the MSCS.  The NSS manages the switching functions of the system and allows the MSCs to communicate with other networks such as the PSTN and ISDN.  The OSS supports the operation and maintenance of GSM and allows system engineers to monitor, diagnose, and troubleshoot all aspects of the GSM system.  This subsystem interacts with the other GSM subsystems, and is solely for the staff of the GSM operating company which provides service facilities for the network.
+Figure 5 shows the block diagram of the GSM system architecture.  The Mobile Stations (MS) communicate with the Base Station Subsystem (BSS) over the radio air interface.  The BSS consists of many BSCs which connect to a single MSC, and each BSC typically controls up to several hundred Base Transceiver Stations (BTSs).  Some of the BTSs may be co-located at the BSC, and others may be remotely distributed and physically connected to the BSC by microwave link or dedicated leased lines.  Mobile handoffs (called handovers, or HO, in the GSM specification) between two BTSs under the control of the same BSC are handled by the BSC, and not the MSC.  This greatly reduces the switching burden of the MSC.
+The interface which connects a BTS to a BSC is called the Abis interface.  The Abis interface carries traffic and maintenance data, and must be standardized for all manufacturers.  In practice, however, the Abis for each GSM base station manufacturer has subtle differences, thereby forcing service providers to use the same manufacturer for the BTS and BSC equipment.
+
+Figure 5- GSM System Architecture
+The BSCs are physically connected via dedicated/leased lines or microwave link to the MSC.  The interface between a BSC and a MSC is called the A interface, which is standardized within GSM.  The A interface uses an SS7 protocol called the Signaling Correction Control Part (SCCP) which supports communication between the MSC and the BSS, as well as network messages between the individual subscribers and the MSC.  The A interface allows a service provider to use base stations and switching equipment made by different manufacturers.
+The NSS handles the switching of GSM calls between external networks and the BSCs in the radio subsystem and is also responsible for managing and providing external access to several customer databases.  The MSC is the central unit in the NSS and controls the traffic among all of the BSCS.  In the NSS, there are three different databases called the Home Location Register (HLR), Visitor Location Register (VLR), and the Authentication Center (AUC).  The HLR contains subscriber information and location information for each user residing in the same city as the MSC.  Each subscriber in a particular GSM market is assigned a unique International Mobile Subscriber Identity GMSI), and this is used to identify each home user.  The VLR is a database which temporarily stores the IMSI and customer information for each roaming subscriber visiting the coverage area of a particular MSC.  The VLR is linked between several adjoining MSCs in a particular market or geographic region and contains subscription information of every visiting user.  Once a roaming mobile is logged in the VLR, the MSC sends the necessary information to the visiting subscriber's HLR so that calls to the roaming mobile can be appropriately routed over the PSTN by the roaming user's HLR.  The Authenticaticn Center is a strongly protected database which handles the authentication and encryption keys for every single subscriber in the HLR and VLR.  The Authentication Center contains a register called the Equipment Identity Register (EIR) which identifies stolen or fraudulently altered phones that transmit identity data not matching the information contained in either the HLR or VLR.
+The OSS supports one or several Operation Maintenance Centers (OMC) which are used to monitor and maintain the performance of each MS, BS, BSC, and MSC within a GSM system.  The OSS has three main functions:
+* Maintain all telecommunications hardware and network operations with a particular market.
+* Manage all charging and billing procedures.
+* Manage all mobile equipment in the system.
+Within a GSM system, an OMC is dedicated to each of these tasks and has provisions for adjusting all base station parameters and billing procedures, as well as for providing system operators that determine the performance and integrity of each piece of subscriber equipment.
+2.4.3	GSM RADIO SUBSYSTEM
+GSM utilizes two bands of 25 MHz which have been set aside for system use in all member countries: the 890-915 MHz band for subscriber-to-base transmissions (reverse link), and the 935-960 MHz band for base to subscriber transmissions (forward link).  GSM uses FDD and a combination of TDMA and FHMA schemes to provide base stations with simultaneous access to multiple users.  The available forward and reverse frequency bands are divided into 200 kHz wide channels called ARFCNs (Absolute Radio Frequency Channel Numbers).  The ARFCN denotes a forward and reverse channel pair which is separated in frequency by 45 MHz and each channel is time shared between as many as eight subscribers using TDMA.
+Each of the eight subscribers uses the same ARFCN and occupies a unique timeslot (TS) per frame.  Radio transmissions on both the forward and reverse link are made at a channel data rate of 270.833 kilobits per second (1625.0/6.0 kbps) using binary 0.3 GMSK modulation.  Thus, the signaling bit duration is 3.692 microseconds, and the effective channel transmission rate per user is 33.854 kilobits per second (270.833 kpbs/ 8 users).  With GSM overhead (described subsequently), user data is actually sent at a maximum rate of 24.7 kilobits per second.  Each TS has a time allocation of 156.25 channel bits, but 8.25 bits of guard time and 6 total start and stop bits are provided to prevent overlap from adjacent time slots.  Figure 7 shows each TS has a time duration of 576.92 microseconds and a GSM TDMA frame spans 4.615 milliseconds.  The total number of available channels within a 25 MHz bandwidth is 125 (assuming no guard band).  Since each radio channel consists of 8 timeslots, there are a total of 1000 traffic channels within GSM.  In practical implementations, a guard band of 100 kHz is provided at the upper and lower end of the GSM spectrum, and only 124 channels are implemented.
+The combination of a TS number and an AR.FCN constitutes a physical channel for both the forward and reverse link.  Each physical channel in a GSM system can be mapped into different logical channels at different times.  That is, each specific time slot or frame may be dedicated to either handling traffic data (user data such as speech, facsimile, or teletext data), signaling data (required by the internal workings of the GSM system), or control channel data (from the MSC, base station, or mobile user).  The GSM specification defines a wide variety of logical channels which can be used to link the physical layer with the data link layer of the GSM network.  These logical channels efficiently transmit user data while simultaneously providing control of the network on each ARFCN.  GSM provides explicit assignments of time slots and frames for specific logical channels, as described below.
+2.4.4	GSM CHANNEL TYPES
+There are two types of GSM logical channels, traffic channels (TCH) and control channels (CCH).  Traffic channels carry digitally encoded user speech or user data and have identical functions and formats on both the forward and reverse link.  Control channels carry signaling and synchronizing commands between the base station and the mobile station.  Certain types of control channels are defined for just the forward or reverse link.  There are six different types of TCHs provided for in GSM, and an even larger number of CCHS.
+2.4.5	SPEECH CODING
+The GSM speech coder is based on the Residually Excited Linear Predictive Coder (RELP), which is enhanced by including a Long Term Predictor(LTP).  The coder provides 260 bits for each 20 ms blocks of speech, which yields a bit rate of 13 kbps.  This speech coder was selected after extensive subjective evaluation of various candidate coders available in the late 1980s.  Provisions for incorporating half rate coders are included in the specifications.
+The GSM speech coder takes advantage of the fact that in a normal conversation, each person speaks on average less than 40% of the time.  By incorporating a voice activity detector (VAD) in the speech coder, GSM systems operate in a discontinuous transmission mode (DTX).  This provides a longer subscriber battery life and reduces instantaneous radio interference since the GSM transmitter is not active during silent periods.  A Comfort Noise Subsystem (CNS) at the receiving end introduces a background acoustic noise to compensate for the annoying switched muting which occurs due to DTX.
+2.4.6	FREQUENCY HOPPING
+Under normal conditions, each data burst belonging to a particular physical channel is transmitted using the same carrier frequency.  However, if users in a particular cell have severe multipath problems, the cell may be defined as a hopping cell by the network operator, in which case slow frequency hopping may be implemented to combat the multipath or interference effects in that cell.  Frequency hopping is carried out on a frame by frame basis.  Thus hopping occurs at a maximum rate of 217.6 hops per second.  As many as 64 different channels may be used before a hopping sequence is repeated.  Frequency hopping is completely specified by the service provider.
+Table 4 GSM Air Interface Specifications Summary
+PARAMETER
+SPECIFICATIONS
+Reverse Channel Frequency
+890 - 915 MHz
+Forward Channel Frequency
+935 - 960 MHz
+ARFCN Number
+0 to 124 and 975 to 1023
+Tx/Rx Frequency Spacing
+Tx/Rx Timeslot Spacing
+45 MHz
+3 Timeslots
+Modulation Data Rate
+270.833333 kbps
+Frame Period
+4.615  s
+Users per Frams (Full Rate)
+8
+Timeslot Period
+579.9  s
+Bit Period
+3.692  s
+Modulation
+0.3 GMSK
+ARFCN Channel Spacing
+200 kHz
+Interleaving (max. delay)
+40  s
+Voice Coder Bit Rate
+13 kbps
+2.5	CDMA DIGITAL CELLULAR STANDARD (IS-95)
+Code Division Multiple Access (CDMA) offers some advantages over TDMA and FDMA.  A U.S. digital cellular system based on CDMA which promises increased capacity has been standardized as Interim Standard 95 (IS-95) by the U.S. Telecommunications Industry Association (TIA).  Like IS-54, the IS-95 system is compatible with the existing U.S. analog cellular system (AMPS) frequency plan, hence mobiles and base stations can be produced for dual mode operation.  CDMA/AMPS dual mode prototype phones were made available in 1994.  The system was developed by Qualcomm.
+IS-95 allows each user within a cell to use the same radio channel, Pilot production and users in adjacent cells also use the same radio channel since this is a direct sequence spread spectrum, code division multiple access system.  This completely eliminates the need for frequency planning within a market.  To facilitate graceful transition (or co-location) from AMPS to CDMA, each IS-95 channel occupies 1.2288 MHz of spectrum on each one-way link, or 10% of the available cellular spectrum for a U.S. cellular provider (recall, the U.S. cellular system is allocated 25 MHz and each service provider receives half the spectrum or 12.5 MHz). IS-95 is fully compatible with the IS-41networking standard, although the large difference in channel bandwidths has made it difficult for carriers to install IS-95 quickly.
+Unlike other cellular standards, the user data rate (but not the channel chip rate) changes in real time, depending on the voice activity and requirements in the network.  Also, IS-95 uses a different modulation and spreading technique for the forward and reverse links. On the forward link, the base station simultaneously transmits the user data for all mobiles in the cell by using a different spreading sequence for each mobile.  A pilot code is also transmitted simultaneously and at a higher power level, thereby sowing all mobiles to use coherent detection while estimating the channel conditions.  On the reverse link, all mobiles respond in an asynchronous fashion and have a constant signal level due to power control applied by the base station.
+The speech coder used in the IS-95 system is the Qualcomm Code Excited Linear Predictive (QCELP) coder.  This vocoder has a data rate of 8550 bps, which, after the addition of error detection bits produces coded speech at 9600 bps.  A 13.2 kbps vocoder, with greatly improved speech quality has been proposed.  The vocoder detects voice activity, and reduces the data rate to 1200 bps during silent periods.  Intermediate user data rates of 2400 and 4800 bps are also used for special purposes.
+2.5.1	FREQUENCY AND CHANNEL SPECIFICATIONS
+IS-95 is specified for reverse link operation in the 824 - 849 MHz band and 869 - 894 MHz for the forward link.  The forward and reverse channel pair are separated by 45 MHz.  Many users share a common channel for transmission.  The maximum user data rate is 9.6 kb/s.  User data in IS-95 is spread to a channel chip rate of 1.2288 Mchip/s (a total spreading factor of 128) using a combination of techniques.  The spreading process is different for the forward and reverse links.  On the forward link, the user data stream is encoded using a rate 1/2 convolutional code, interleaved, and spread by one of 64 orthogonal spreading sequences (Walsh functions).  Each mobile in a given cell is assigned a different spreading sequence, providing perfect separation among the signals from different users, at least for the case where a multipath does not exist.  To reduce interference between mobiles that use the same spreading sequence in different cells, and to provide the desired wideband spectral characteristics (not all of the Walsh functions yield a wideband power spectrum), all signals in a particular cell are scrambled using a pseudo-random sequence of length chips.
+Orthogonality among all forward channel users within a cell is preserved because their signals are scrambled synchronously.  A pilot channel (code) is provided on the forward link so that each subscriber within the cell can determine and react to the channel characteristics while employing coherent detection.  The pilot channel is transmitted at higher power than the user channels.
+On the reverse link, a different spreading strategy is used since each received signal arrives at the base station via a different propagation path.  The reverse channel user data stream is first convolutionally encoded with a rate 1/3 code.  After interleaving, each block of six encoded symbols is mapped to one of the 64 orthogonal Walsh functions, providing 64-ary orthogonal signaling.  A final fourfold spreading, giving a rate of 1.2288 Mchip/s, is achieved by spreading the resulting 307.2 kchip/s stream by user-specific and base-station specific codes having periods of chips and chips, respectively.  The rate 1/3 coding and the mapping onto Walsh functions result in a greater tolerance for interference than would be realized from traditional repetition spreading codes.  This added robustness is important on the reverse link, due to the non-coherent detection and the in-cell interference received at the base station.
+Another essential element of the reverse link is tight control of each subscriber's transmitter power, to avoid the "near-far" problems that arise from varying received powers of the users.  A combination of open-loop and fast closed-loop power control adjusts the transmit power of each in-cell subscriber so that the base station receives each user with the same received power.  The commands for the closed-loop power control are sent at a rate of 800 b/s, and these bits are stolen from the speech frames.  Power control is carried out in I dB steps at each mobile.
+At both the base station and the subscriber, RAKE receivers are used to resolve and combine multipath components, thereby reducing the degree of fading.  This receiver architecture also provides base station diversity during "soft" handoffs, whereby a mobile making the transition between cells maintains links with both base stations during the transition.  The mobile receiver combines the signals from the two base stations in the same manner as it would combine signals associated with different multipath components.
+2.5.2	THE FORWARD CDMA CHANNEL
+The forward CDMA channel consists of a pilot channel, a synchronization channel, up to 7 paging channels and up to 63 forward traffic channels.  The Pilot Channel allows a mobile station to acquire timing for the Forward CDMA channel.  It provides a phase reference for coherent demodulation, and gives each mobile a means for signal strength comparisons between base stations for determining when to hand-off.  The Synchronization Channel broadcasts synchronization messages to the mobile stations and operates at 1200 bps.  The Paging Channel is used to send control information and paging messages from the base station to the mobiles and operates at 9600, 4800, and 2400 bps.  The forward traffic channel (FTC) supports variable user data rates at 9600, 4800, 2400, or 1200 bps.   
+To support the new and improved 13 kbps vocoder, the forward traffic link can also support variable user data rates at 14400, 7200, 3600, or 1800 bps.  The additional parameters are provided assuming an 8 kbps vocoder.  These number can easily be scaled to reflect the change for the 13 kbps vocoder case.
+The forward traffic channel modulation process can be generally described as the following.  Data on the forward traffic channel is grouped into 20 ms frames.  The user data is first convolutionally coded and then formatted and interleaved to adjust for the actual user data rate, which may vary.  Then the signal is spread with a Walsh code and a long PN sequence at a rate of 1.2288 Mcps.  Table 10.4 lists the coding and repetition parameters for the forward traffic channel.
+Table 5 IS-95 Forward Traffic Channel Modulation Parameters Summary
+PARAMETER
+PARAMETER (8 kbps coder)
+USER DATA RATE
+9600
+4800
+2400
+1200
+Coding rate
+1/2
+1/3
+1/4
+1/5
+User Data Repetition Period
+1
+2
+4
+8
+Baseband coded data rate
+19,200
+19,200
+19,200
+19,200
+PN Chips/Coded data bit
+64
+64
+64
+64
+Pn Chip Rate (Mcps)
+1.2288
+1.2288
+1.2288
+1.2288
+PN Chips/Bits
+128
+256
+512
+1024 2.5.3	Reverse CDMA Channel
+The reverse traffic channel modulation process is described in this section.  User data on the reverse channel is grouped into 20 ms frames.  All data transmitted on the reverse channel are convolutionally encoded, block interleaved, modulated by a 64-ary orthogonal modulation, and spread prior to transmission.  The speech or user data rate in the reverse channel may be sent at 13, 200, 9600, 4800, 2400 or 1200 bps.
+Reverse IS-95 channel modulation process for a single user
+
+The reverse CDMA channels are made up of Access Channels (AC) and Reverse Traffic Channels (RTC).  Both share the same frequency assignment, and each Traffic/Access channel is identified by a distinct user long code.  The Access Channel is used by the mobile to initiate communication with the base station and to respond to Paging Channel Messages.  The Access Channel is a random access channel with each channel user uniquely identified by their long codes.  The Reverse CDMA channel may contain a maximum of 32 ACs per supported Paging Channel. While the RTC operates on a variable data rate, the AC works at a fixed data rate of 4800 bps
+Table 6   Reverse Traffic Channel Modulation Parameters Summary
+PARAMETER
+DATA RANGE
+USER DATA RATE
+9600
+4800
+2400
+1200
+Coding rate
+1/3
+1/3
+1/3
+1/3
+TX Duty Cycle (%)
+100.0
+50.0
+25.0
+12.5
+Coded Data Rate (sps)
+28,800
+28,800
+28,800
+28,800
+Bits per Walsh Symbol
+6
+6
+6
+6
+Walsh Symbol Rate
+4800
+4800
+4800
+4800
+Walsh Chip Rate (kcps)
+307.2
+307.2
+307.2
+307.2
+Walsh Symbol Duration ( s)
+208.33
+208.33
+208.33
+208.33
+PN chips/Code Symbol
+42.67
+42.67
+42.67
+42.67
+PN chips/Walsh Symbol
+256
+256
+256
+256
+PN chips/Walsh Chip
+4
+4
+4
+4
+PN Chip Rate (Mcps)
+1.2288
+1.2288
+1.2288
+1.2288 2.6	CT2 STANDARD FOR CORDLESS TELEPHONES
+CT2 is the second generation of cordless telephones introduced in Great Britain in 1989.  The CT2 system is designed for use in both domestic and office environments.  It is used to provide telepoint services which allow a subscriber to use CT-2 handsets at a public telepoint (a public telepoint telephone booth or a lamp-post) to access the PSTN.
+2.6.1	THE CT2STANDARD
+The CT2 standard defines how the Cordless Fixed Part (CFP) and the Cordless Portable Part (CPP) communicate through a radio link.  The CFP corresponds to a base station and the CPP corresponds to a subscriber unit.  The frequencies allocated to CT2 are in the 864.10 MHz to 868.10 MHz band.  Within this frequency range, 40 TDD channels have been assigned, each with 100 kHz bandwidth.
+The CT2 standard defines three air interface signaling layers and the speech coding techniques.  Layer One defines the TDD technique, data multiplexing and link initiation and handshaking.  Layer Two defines data acknowledgment and error detection as well as link maintenance.  Layer Three defines the protocols used to connect CT2 to the PSTN.
+2.6.2	MODULATION
+All channels use Gaussian filtered binary frequency shift keying (GFSK) with bit transitions constrained to be phase continuous.  The most commonly used filter has a bandwidth-bit period product BT=0.3, and the peak frequency deviation is max. 25.2 kHz under all possible data patterns.  The channel transmission rate is 72 kbps.
+2.6.3	SPEECH CODING
+Speech waveforms are coded using ADPCM with a bit rate of 32 kbps.  CCITT standard G.721 compliant algorithm.
+2.6.4	DUPLEXING
+Two way full duplex conversation is achieved using time division duplex (TDD).  A CT2 frame has a 2 ms duration and is divided equally between the forward and reverse link.  The 32 kbps digitized speech is transmitted at a 64 kbps rate.  Each 2 ms of user speech is transmitted in a 1 ms, with the 1 ms gap used for th e speech return path.  This eliminates the need for paired frequencies or a duplex filter in the subscriber unit.  Since each CT2 channel support 72 kbps of data, the remaining 8 kbps is used for control data (the D subchannel) and burst synchronization (the SYN subchannel).  Depending on CT2 situations, the channel bandwidth may be allocated to one or more of the subchannel.  The different possible subchannel combinations are called multiplexes, and three different multiplexes may be used in CT2. 
+Table 7  CT2 Radio Specification Summary
+PARAMETER
+SPECIFICATION
+Frequency
+864.15 - 868.05 MHz
+Multiple Access
+FDMA
+Duplexing
+TDD
+Number of Channels
+40
+Channel Spacing
+100 kHz
+Number of Channels/Carrier
+1
+Modulation Type
+2 level FSK shaped by Gaussian Filter
+Peak Frequency Deviation Range
+14.4 kHz to 25.2 kHz
+Channel Data Rate
+72 Kbps
+Spectral Efficiency
+50 Erlangs/km2/MHz
+Bandwidth Efficiency
+0.72 bps/Hz
+Speech Coding
+32 kbps ADPCM (G.721)
+Control Channel Rate (net)
+1000/2000 bps
+Max. Effective Radiated Power
+10 mW
+Power Control
+Yes
+Dynamic Channel Allocation
+Yes
+Receiver Sensitivity
+40 dB V/m or better @ BER of 0.001
+Frame Duration
+2  s
+Channel Coding
+(63, 48) cyclic block code
+2.7	DIGITAL EUROPEAN CORDLESS TELEPHONE (DECT)
+The Digital European Cordless Telephone (DECT) is a universal cordless telephone standard developed by the European Telecommunications Standards Institute (ETSI).  It is the first Pan-European standard for cordless telephones and was finalized in July 1992.
+2.7.1	FEATURES AND CHARACTERISTICS
+DECT provides a cordless communications framework for high traffic density, short range telecommunications, and covers a broad range of applications and environments.  DECT offers excellent quality and services for voice and data applications. The main function of DECT is to provide local mobility to portable users in an in-building Private Branch Exchange (PBX).  The DECT standard supports telepoint services, as well.  DECT is configured around an open standard (OSI) which makes it possible to interconnect wide-area fixed or mobile networks, such as ISDN or GSM, to a portable subscriber population.  DECT provides low power radio access between portable parts and fixed base stations at ranges of up to a few hundred meters.
+2.7.2	DECT ARCHITECTURE
+The DECT system is based on OSI (Open System Interconnection) principles in a manner similar
+to ISDN.  A control plane (C-plane) and a user plane (U-plane) use the services provided by the lower layers (i.e. the Physical layer and the Medium Access Control (MAC) layer).  DECT is able to page up to 6000 subscribers without needing to know in which cell they reside (no registration required), and unlike other cellular standards such as AMPS or GSM, DECT is not a total system concept.  It is designed for radio local loop or metropolitan area access, but may be used in conjunction with side-area wireless  systems such as GSM.  DECT uses dynamic channel allocation based on signals received by the portable user and is specifically designed to only support handoffs at pedestrian speeds.
+2.7.3	PHYSICAL LAYER
+DECT uses a FDMA/TDD radio transmission method.  Within a TDMA time slot, a dynamic selection of I out of 10 carrier frequencies is used.  The physical layer specification requires
+that the channels have a bandwidth which is 1.5 times the channel data rate of 1152 kbps, resulting in a channel bandwidth of 1.728 MHz. DECT has 24 time slots per frame, and 12 slots are used for communications from the fixed part to the portable (base to handset) and 12 time slots for portable to fixed (handset to base) communications.  These 24 time slots make up a DECT frame which has a 10 ms duration.  In each time slot, 480 bits are allocated for 32 synchronization bits, 388 data bits, and 60 bits of guard time.  
+2.7.4	THE NETWORK LAYER
+The network layer is the main signaling layer of DECT and is based on ISDN (layer 3) and GSM protocols.  The DECT network layer provides call control and circuit switched services selected from one of the DLC services, as well as connection oriented message services and mobility management.
+2.7.5	DECT RADIO LINK
+DECT operates in the 1880 to 1900 band.  Within this band, the DECT standard defines 10 channels from 1881.792 to 1897.344 with a spacing of 1728 kHz.  DECT supports a Multiple Carrier/TDMA/ TDD structure.  Each base station provides a frame structure which supports 12 duplex speech channels, and each time slot may occupy any of the DECT channels.  Thus, DECT base-stations support FHMA on top of the TDMAFMD structure.  If the frequency hopping option is disabled for each DECT base station, a total of 120 channels within the DECT spectrum are provided before frequency reuse is required.  Each time slot may be assigned to a different channel in order to exploit advantages provided by frequency hopping, and to avoid interference from other users in an asynchronous fashion.
+2.7.6	CHANNEL TYPES
+DECT user data is provided in each B-field time slot. 320 user bits are provided during each time slot yielding a 32 kbps data stream per user.  No error correction is provided although 4 parity bits are used for crude error detection.
+DECT control information is carried by 64 bits in every time slot of an established call.  These bits are assigned to one of the four logical charmers channels depending on the nature of the control information.  Thus, the gross control channel data rate is 6.4 kbps per user.  DECT relies on error detection and re-transmission for accurate delivery of control information.  Each 64 bit control word contains 16 cyclic redundancy check (CRC) bits, in addition to the 48 control data bits.  The maximum information throughput of the DECT control channel is 4.8 kbps.
+2.7.7	SPEECH CODING
+Analog speech is digitized into PCM using a 8 kHz sampling rate.  The digital speech samples are ADPCM encoded at 32 kbps following CCITT G.721 recommendations.
+Table 8 DECT Radio Specifications Summary
+PARAMETER
+SPECIFICATION
+Frequency Band
+1880 - 1900 MHz
+Number of Carriers
+10
+RF Channel Bandwidth
+1.728 MHz
+Multiplexing
+FHMA/TDMA 24 slots per frams
+Duplexing
+TDD
+Spectral Efficiency
+500 Erlang/km2.MHz
+Speech Coder
+32 kbps ADPCM
+Average Transmitted Power
+10 mW
+Frame Length
+10 s
+Channel Bit Rate
+1152 kbps
+Data Rate
+32 kbps Traffic Channel
+6.2 kbps Control Channel
+Channel Coding
+CRC 16
+Dynamic Channel Allocation
+Yes
+Modulation
+GFSK (BT = 0.3)
+Speech Channel/RF Channel
+12 2.8	PACS - PERSONAL ACCESS COMMUNICATION SYSTEMS
+PACS is a third generation Personal Communications system originally developed and proposed by Bellcore in 1992.  PACS is able to support voice, data, and video images for indoor and microcell use.  The main objective of PACS is to integrate all forms of wireless local loop communications into one system with full telephone features, in order to provide wireless connectivity for local exchange carriers (LECs).  Bellcore developed PACS with LECs in mind and named it Wireless Access Communication System (WACS), but when the FCC introduced an unlicensed PCS band the WACS standard was modified to produce PACS.  In the original WACS proposal, ten TDMA/FDM time slots were specified in a 2 ms frame, and a 500 kbps channel data rate was proposed for a channel bandwidth of 350 kHz using QPSK modulation.  In PACS, the channel bandwidth, the data rate, the number of slots per frame, and the frame duration were altered slightly and p/4 QPSK was chosen over QPSK.
+2.8.1	PACS SYSTEM ARCHITECTURE
+PACS was developed as a universal wireless access system for wide spread application in private and public telephone systems which operate in either licensed or unlicensed PCS bands.  PACS may be connected to a PBX or Centrex, and served by a Central Office in residential applications.  The PACS architecture consists of four main components: the subscriber unit (SU), which may be fixed or portable; the radio ports (RP), which are connected to the radio port control unit (RPCU); and the access manager (AM), as shown in Figure 8.  Interface A, the air interface provides a connection between the SU and RP.  Interface P provides the protocols required to connect the SUs.  Through the RPs to the RPCU, and also connects the RPCU with its RPs by using an Embedded Operations Channel (EOC) provided within the interface.
+
+Figure 8- PACS System Architecture
+The PACS PCS standard contains a fixed distribution network and network intelligence.  Only the last 500 m of the distribution network are designed to be wireless.
+2.8.2	PACS RADIO INTERFACE
+The PACS system is designed for operation in the U.S. PCS band.  A large number of R.F channels may be frequency division multiplexed with 80 MHz separation, or time division multiplexed.  PACS and WACS channel bandwidth is 300 kHz.
+WACS originally used TDMA with frequency division duplexing (FDD), with eight time slots provided in a 2.0 ms frame on each radio channel.  When used with FDD, the reverse link time slot is offset from its paired forward link time slot by exactly one time slot plus 62.5 ms.  The forward link covers 1850 to 1910 MHz and the reverse covers 1930 to 1990 MHz.
+The version of PACS developed for the unlicensed U.S. PCS band (PACS-LJB) between 1920 and 1930 MHz uses TDD instead of FDD.  
+Table 9  PACS Radio (FDD or TDD implementations) Specification Summary
+PARAMETER
+SPECIFICATION
+Multiple Access
+TDMA
+Duplexing
+FDD or TDD
+Frequency Band
+1 - 3 GHz
+Modulation
+1/4 DQPSK
+Channel Spacing
+300 kHz
+Portable Transmitter Average Power
+200 mW
+Base Station Average Power
+800 mW
+Probability of coverage within service area
+greater than 90%
+Channel coding
+CRC
+Speech coding
+16 bit ADPCM
+Time slots per frams
+8
+Frame duration
+2.5 s
+Users per frame
+8 (FDD) or 4 (TDD)
+Channel bit rate
+384 kbps
+Speech rate
+32 kbps
+Bit error
+Less than 0.01
+Voice delay
+Less than 50s
+2.9	Applicable PCS Standards
+As mentioned previously, many standards that were originally developed for the cellular band, were later modified, and adopted, for the PCS bands.  In many instances, the standards adopted for PCS had almost identical air interface protocols only specified at the higher PCS frequencies.  At the same time, PCS standards tried to avoid inefficiencies and interoperability issues that existed in the cellular standards.  PCS standards, where possible, took advantage of the clean ( no existing users) PCS spectrums to implement additional services and features.
+2.9.1	TDMA-1900 (IS-136)
+This standard is an almost identical version of USDC (IS-54) at PCS frequencies.  Channel structures, vocoder rates and other key system parameters remain identical in IS-54 and IS-136.  Additionally, TDMA-1900 has ironed out many interoperability issues between subscriber units and infrastructure built by different manufacturers.  This issue significantly delayed the introduction of cellular TDMA
+2.9.2	CDMA-1900
+This standard is slight variation of cellular CDMA(IS-95) at PCS frequencies.  Channel structures, vocoder rates and other key system parameters were originally modified to support a higher quality rate vocoder ( 13 kbps versus 8 kbps adopted for cellular CDMA).  These changes include modifications to convolutional coder and the speech codec to support the higher rate.
+2.9.3	GSM-1900
+GSM-1900 ( Also called DCS-1900) is an almost identical version of European DCS-1800 ( which was introduced in the U.K. as a 1800 MHz GSM standard) at PCS frequencies.  Channel structures, vocoder rates, system architecture and other key system parameters remain identical in GSM.  
+3.0	Quality and Capacity Considerations
+With the intricacy of the PCS standards and technologies, and the complexity of the factors that determine their performance, it is critical to establish a baseline for comparisons.  It is, therefore, necessary to compare the leading digital PCS technologies in terms of their quality, capacity and cost.  In the battle to prove superiority among the top three PCS digital standards, proponents of each technology have presented the industry with many reports why a particular technology outperforms all others.  Initially, the industry was flooded with many reports that reported significantly different numbers for capacity and quality of a CDMA, GSM and USDC systems.  Most of these studies were reporting accurate results based on different assumptions that were either too optimistic or pessimistic depending on what the desired outcome was.  The following sections provide an overview of what we believe to be the typical performance for each technology under realistic conditions as specified.  Although quality and capacity are discussed separately, one must be cautioned that these to measures are not independent, and must be considered together.
+3.1	TDMA-1900 
+IS-54 TDMA is perhaps the least challenged technology.  Designed as a transitional technology to migrate the analog systems to digital, it has a very well understood parameters that pinpoint its quality and capacity.
+3.1.1	Quality
+Since its introduction in 1992, cellular TDMA has been through a bumpy road.  However, USDC and its PCS counterpart, TDMA-1900, are mature and reliable standards with most of the interoperability issues worked out over the last 4-5 years.  With the deployment of Digital Control Channel, TDMA-1900 is a fully digital technology with no dependents on AMPS to limit its features.   As a fully digital channel, it also offers a robust RF link that can tolerate interference much better then present cellular.  It can also compete with CDMA and GSM in new features and services.  TDMA offers Mobile Assisted Hand-off (MAHO) which can significantly improve call reliability.  
+As previously mentioned, TDMA uses an 8 kbps vocoder.  The voice quality of this vocoder has been under question since early days of TDMA.  It is our belief that the current implementation of the TDMA vocoder offers a voice quality that is not toll quality.  The poor voice quality is most obvious where mobile to mobile calls are used.  In this scenario, the use of two back to back vocoders degrades voice quality significantly.  Many advances have been made recently in improving the quality of the existing vocoder, as well as a new standard for an 8 kbps enhanced codec.  Early results indicate significant improvements with the new vocoders.
+3.1.2	Capacity
+Since TDMA channel spacing and its signal to interference (C/I) is very similar to AMPS, the capacity numbers reported for TDMA have been consistently the same.  Typically in TDMA, a 1% BER (which corresponds to a good vice quality, a 17 dB C/I is required.  This allows the planners to use N=7 reuse pattern.  Using a 3 sector conventional base stations, A system with 5 MHz of bandwidth can support up to 8 TDMA channels, or 24 simultaneous calls, per sector assuming a full rate vocoder.  Other capacity enhancing schemes such as discontinuous transmission ( to take advantage of silence periods in human speech) and adaptive channel allocations can potentially increase this capacity by factors of 2.6 and 1.5 respectively.
+TDMA also has the potential for increased capacity ( by a factor of two) by the use of half rate vocoder.  With its current vocoder voice quality under question, this potential is unlikely to be realized in the near future.
+3.2	CDMA-1900 
+CDMA capacity and quality are perhaps the most contended issues in the wireless industry.  Although late to the digital technology battle, CDMA has picked up significant support in the wireless industry, specially in the US.  An inherently complex technology,  CDMA seems to have gained an advantage in terms of quality and capacity.  Clearly, CDMA pays for such by the increase in system complexity.
+3.2.1	Quality
+CDMA uses many new concepts and methods to improve call quality and reliability.  Some of these methods are unique to CDMA since they can only be implemented in a DS spread spectrum system.  Others are just new concepts in combating interference.
+Due to its spread spectrum nature, CDMA can take advantage of higher orders of diversity such as frequency and time diversity to improve performance.  Because of this, such phenomenon as time dispersion that is detrimental to all TDMA systems, are used by CDMA to improve system quality.  Soft hand-off ( a form of hand-off unique to CDMA where a user is capable of simultaneously communicating with multiple base stations) significantly improves call reliability by routing conversations through multiple independent paths.  
+CDMA-1900 offers a recently developed variable 13 kbps vocoder that achieves near toll quality voice transmission even in the mobile to mobile case where two vocoders are used back to back.  This differentiation alone has  convinced some operators to choose CDMA over TDMA or GSM.  
+Such improvements in performance are only obtained at a cost of increase in system complexity.  CDMA is still a relatively new technology in the commercial world.  As any new technology, CDMA is still being developed, and thus growing pains are still expected.  However, CDMA systems have matured faster than their TDMA counterparts largely due to Qualcomm.  As the inventors and developers of the technology, Qualcomm has championed fast and successful resolution of many CDMA issues.
+3.2.2	Capacity
+Due to its complexity, there are many factors involved in determining CDMA capacity.  Also since CDMA is a spread spectrum system, it capacity is measured very differently than conventional FDMA or TDMA systems.  For example, CDMA carriers occupy a larger bandwidth (1.25 MHz compared to 30 KHz of TDMA or 120 KHz in GSM).  However, CDMA allows planners to reuse a single carrier through out an entire system which equates to 100% reuse efficiency.
+Using the conventional CDMA assumptions, it is widely believed that a CDMA carrier (occupying 1.25 MHz of spectrum) can support 14 simultaneous users per sectors when 75% loaded.  Assuming 5 MHz band, 2-3 CDMA carriers can be fitted in the band, depending the filtering specifications of the manufacturers of CDMA equipment, and guard-band requirements outside the D&E bands.  These assumptions will result in 28 to 42 simultaneous users per sector.
+CDMA also has the potential to increase its capacity (by 50%) by the use of an enhance 8 kbps vocoder that promises to deliver the same voice quality as the 13 kbps vocoder.  CDMA has the best chance of improving its capacity, or coverage, with a the new enhanced vocoders.
+In small bandwidths such as 5 MHz,  CDMA is at a distinct disadvantage due to its large (1.25 MHz) bandwidth requirements and possible guard-bands needed for protection.  At the same time, CDMA benefits from a phenomenon called �soft capacity�.  In CDMA, the system can always sacrifice quality for capacity.  This enables the system to temporarily add additional users to the system.  In contrast, in FDMA and TDMA systems, there is a one to one correspondence between available channels and number of users 
+3.3	GSM-1900 
+Although GSM has not had a significant success in the US, it is still the most widely used wireless digital standard in the world.  Europe has spent over 10 years in developing, deploying and maturing the technology.  Inherently a TDMA system, it has been in a constant battle with CDMA to establish itself.  It is a fully digital system that, in conjunction with the most flexible and open network architecture, offers many quality features.
+3.3.1	Quality
+GSM has proven itself to be a mature system with a consistent performance.  If engineered properly, a GSM system can provide an excellent performance and call reliability.  Although GSM and IS-54 TDMA are significantly different from a radio link perspective, they offer similar features such as Mobile Assisted Hand-Off  and other interference control mechanisms to improve call reliability.  However, due to faster development paces in Europe, many GSM advance features (e.g., frequency and time-slot hopping, and Adaptive channel allocations) have been implemented much faster.
+Although GSM uses a 13 kbps vocoder, it does not achieve near toll quality voice transmission.  This is mainly due to the fact that GSM is based on an older codec algorithms.  Many analysts consider CDMA 13 kbps vocoder to be superior to that of GSM.  GSM voice quality is also believed to be superior to IS-54 TDMA.  Enhance vocoders are also planned for GSM in the near future.  The vocoder rate in GSM, however, is fixed, and therefore GSM will not benefit from any further reduction in vocoder rate as vocoder technology is improved.
+3.3.2	Capacity
+Being a TDMA based technology, one would assume that it is easy to determine capacity improvements in GSM.  However, this has not been the case since GSM offers advance capacity enhancing features such as channel hopping and adaptive channel allocations.  The interference reduction, and therefore the capacity improvement, are not easy to measure, and has been an area of controversy.
+Assuming a C/I requirement of 17 dB, N=7 reuse in a 3 sector configuration, 200 KHz channel bandwidth, 7.5 users per channel, and 5 MHz of spectrum,  GSM can achieve a capacity of 9 users per sector.  
+However, it is widely believed that GSM can reach a N=4 reuse by use of careful cell planning and interference control using ADC.  In this case , the number of simultaneous users is increased to 15 users per sector.
+
